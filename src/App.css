@@ -27,6 +27,11 @@
 .App-link {
   color: #61dafb;
 }
+.btn-primary {
+  color: #fff;
+  background-color: #e80229;
+  border-color: #e80229;
+}
 
 @keyframes App-logo-spin {
   from {
