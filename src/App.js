@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Submissionsform from './components/Submissions-form.js';
+import Homepage from './components/Homepage.js';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
         <Switch>
           <Route path="/project/submission">
             <Submissionsform />
+          </Route>
+          <Route path="/project">
+            <Homepage />
           </Route>
         </Switch>
       </Router>

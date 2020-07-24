@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
 
 
 
@@ -31,19 +32,19 @@ export default function Submit(props) {
                 if(json.status===200){
                     alert("Success!, your project has been submitted and is pending approval")
                 } else{
-                    alert('Error')
+                    alert('Error invalid details entered')
                 }
                 // alert(json.status)
             })
     }
     return (
-        <div>
-            
-        <ul className="breadcrumbs">
-        <li className="breadcrumb-item text-body font-weight-bold" > <a href="https://www.service.nsw.gov.au/">Home</a></li>
-        <li className="breadcrumb-item active text-body font-weight-bolder"> Submit a My Community Project Proposal</li>
-        </ul>
-      
+       
+      <div>
+        <Breadcrumb>
+        <Breadcrumb.Item className="breadcrumb-item text-body font-weight-bold" > <a href="https://www.service.nsw.gov.au/">Home</a> </ Breadcrumb.Item>
+        <Breadcrumb.Item active className="breadcrumb-item text-body font-weight-bolder"> Submit a My Community Project Proposal </ Breadcrumb.Item>
+        </ Breadcrumb>
+
             <h1>Submit a My Community Project Proposal</h1>
             <br />
             <form>
