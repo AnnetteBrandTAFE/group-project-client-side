@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Submissionsform from './components/Submissions-form.js';
@@ -8,19 +8,20 @@ import Submissionsform from './components/Submissions-form.js';
 function App() {
   return (
     <Container>
-      <nav class="navbar navbar-expand-sm bg-light navbar-light">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Active</a>
+      <nav className="navbar navbar-expand-sm bg-light navbar-light">
+        <ul className="navbar-nav ">
+        <img src="./public/SNSW-logos.png" alt="NSW Government and Service NSW Logo"></img>
+          <li className="nav-item">
+            <a className="nav-link text-body font-weight-bold" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+          <li className="nav-item ">
+            <a className="nav-link text-body font-weight-bold" href="https://www.service.nsw.gov.au/services">Browse services</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+          <li className="nav-item">
+            <a className="nav-link text-body font-weight-bold" href="https://mybusiness.service.nsw.gov.au/">Business</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+          <li className="nav-item ">
+            <a className="nav-link text-body font-weight-bold" href="https://www.service.nsw.gov.au/service-centre">Find locations</a>
           </li>
         </ul>
       </nav>
@@ -29,9 +30,7 @@ function App() {
 
         <Switch>
           <Route path="/project/submission">
-
             <Submissionsform />
-
           </Route>
         </Switch>
       </Router>
