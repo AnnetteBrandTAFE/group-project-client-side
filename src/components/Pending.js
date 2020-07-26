@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { Switch, BrowserRouter as Router, Route, Link, useRouteMatch } from 'react-router-dom'
-import UpdateStatus from './UpdateStatus'
-import Button from 'react-bootstrap/Button'
+// import { useParams } from 'react-router-dom'
+// import { Switch, BrowserRouter as Router, Route, Link, useRouteMatch } from 'react-router-dom'
+// import UpdateStatus from './UpdateStatus'
+// import Button from 'react-bootstrap/Button'
 import PendingProject from "./PendingProject.js";
 
 export default function Pending() {
 
     const [pendingProjects, setPendingProjects] = useState([])
-    const [projectStatus, setProjectStatus] = useState()
-    const [id, setId] = useState()
+    //const [projectStatus, setProjectStatus] = useState()
+    //const [id, setId] = useState()
 
 
     useEffect(() => {
-        fetch("http://localhost:4001/projects/pending")
+        fetch("http://localhost:4000/projects/pending")
             .then((response) => response.json())
             .then((json) => setPendingProjects(json));
     }, [pendingProjects]);
@@ -23,7 +23,9 @@ export default function Pending() {
     return (
         <div>
             <h1><strong>Pending My Community Project Proposals</strong></h1>
-            {/* <h2>There are currently {pendingProjects.length} pending projects</h2> */}
+            <br />
+            <h2>There are currently {pendingProjects.length} pending projects</h2>
+            <br />
             {pendingProjects.map(p => <PendingProject key={p.id} p={p} />)}
 
         </div>

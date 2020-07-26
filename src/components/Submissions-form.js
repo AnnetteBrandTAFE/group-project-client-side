@@ -22,7 +22,7 @@ export default function Submit(props) {
 
         };
 
-        fetch('http://localhost:4001/projects/submissions', {
+        fetch('http://localhost:4000/projects/submissions', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(p),

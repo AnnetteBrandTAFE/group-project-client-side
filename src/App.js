@@ -6,7 +6,6 @@ import Container from 'react-bootstrap/Container';
 import Submissionsform from './components/Submissions-form.js';
 import Homepage from './components/Homepage.js';
 import Pending from './components/Pending'
-import UpdateStatus from './components/UpdateStatus'
 
 function App() {
 

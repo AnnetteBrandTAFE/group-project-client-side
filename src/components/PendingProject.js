@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 export default function PendingProject(props) {
 
     function ApproveProjectFunction() {
-        fetch('http://localhost:4001/projects/approve', {
+        fetch('http://localhost:4000/projects/approve', {
             method: "PUT",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(props.p),
