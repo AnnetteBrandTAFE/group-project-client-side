@@ -1,62 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { Switch, BrowserRouter as Router , Route, Link, useRouteMatch } from 'react-router-dom'
+import { Switch, BrowserRouter as Router, Route, Link, useRouteMatch } from 'react-router-dom'
 import UpdateStatus from './UpdateStatus'
 import Button from 'react-bootstrap/Button'
+import PendingProject from "./PendingProject.js";
 
 export default function Pending() {
 
-    const [pendingProjects, setPendingProjects] = useState()
+    const [pendingProjects, setPendingProjects] = useState([])
     const [projectStatus, setProjectStatus] = useState()
     const [id, setId] = useState()
 
 
     useEffect(() => {
-        fetch('http://localhost:4000/projects/pending')
-            .then(res => res.json())
-            .then(json => setPendingProjects(json.map(p =>
-                <div key={p.id} className="border float-none m-1">
-                    <p>Project Title: {p.title}</p>
-                    <p>Submitters name: {p.name}</p>
-                    <p>Time of Submission: {p.timeStamp}</p>
-                    <p>Postcode: {p.postcode}</p>
-                    <p>Requested Funding Amount: $ {p.grantAmount}</p>
-                    <p>Description: {p.description}</p>
-                    <Link to={`${url}/${p.id}`}>Update Status</Link>
-                </div>
-            ))
+        fetch("http://localhost:4001/projects/pending")
+            .then((response) => response.json())
+            .then((json) => setPendingProjects(json));
+    }, [pendingProjects]);
 
-            )
 
-    }, [])
-
-    let { path, url } = useRouteMatch()
     // debugger
     return (
         <div>
-            <Router>
-                <Switch>
-                    <Route path={`${path}:id`}>
-                        <UpdateStatus />
-                    </Route>
-                </Switch>
-            </Router>
             <h1><strong>Pending My Community Project Proposals</strong></h1>
             {/* <h2>There are currently {pendingProjects.length} pending projects</h2> */}
-            {console.log(pendingProjects)}
-            {/* {pendingProjects.map(p =>
-                <div key={p.id} className="border float-none m-1">
-                    <p>Project Title: {p.title}</p>
-                    <p>Submitters name: {p.name}</p>
-                    <p>Time of Submission: {p.timeStamp}</p>
-                    <p>Postcode: {p.postcode}</p>
-                    <p>Requested Funding Amount: $ {p.grantAmount}</p>
-                    <p>Description: {p.description}</p>
-                    <Button to={`${url}/${p.id}`}>Update Status</Button>
-                </div> 
-             )} */}
-            {pendingProjects}
+            {pendingProjects.map(p => <PendingProject key={p.id} p={p} />)}
+
         </div>
+
     )
 }
 // {/* </div> */}
