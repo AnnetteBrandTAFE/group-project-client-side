@@ -13,19 +13,19 @@ function App() {
   return (
     <Container>
         <nav className="navbar navbar-expand-sm bg-light navbar-light">
-          <ul className="navbar-nav ">
             <img src={Logo} width="auto" height="50px" alt="NSW Government and Service NSW Logo"></img>
+          <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link text-body font-weight-bold" href="#">Home</a>
+              <a className="nav-link text-body font-weight-bold" href="/">Home</a>
             </li>
             <li className="nav-item ">
-              <a className="nav-link text-body font-weight-bold" href="https://www.service.nsw.gov.au/services">Browse services</a>
+              <a className="nav-link text-body font-weight-bold" href="/project/submission">Submit a Project Proposal</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-body font-weight-bold" href="https://mybusiness.service.nsw.gov.au/">Business</a>
+              <a className="nav-link text-body font-weight-bold" href="https://mybusiness.service.nsw.gov.au/">Vote Now</a>
             </li>
             <li className="nav-item ">
-              <a className="nav-link text-body font-weight-bold" href="https://www.service.nsw.gov.au/service-centre">Find locations</a>
+              <a className="nav-link text-body font-weight-bold" href="/pending">Admin</a>
             </li>
           </ul>
         </nav>
@@ -36,11 +36,11 @@ function App() {
           <Route path="/project/submission">
             <Submissionsform />
           </Route>
-          <Route path="/project">
-            <Homepage />
-          </Route>
           <Route path="/pending">
             <Pending />
+          </Route>
+          <Route path="/">
+            <Homepage />
           </Route>
         </Switch>
       </Router>
