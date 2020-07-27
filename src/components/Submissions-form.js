@@ -47,25 +47,27 @@ export default function Submit(props) {
 
             <h1>Submit a My Community Project Proposal</h1>
             <br />
+            <span class="text-danger">* </span><span>indicates a required field</span> <br />
+            <br />
             <form>
                 <div className="form-group">
-                    <label htmlFor="name">Contact Name: </label>
+                    <label htmlFor="name">Contact Name: </label><span class="text-danger">*</span>
                     <input placeholder="Max 50 characters" onChange={(e) => setName(e.target.value)} value={name} className="form-control" />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="title">Title of My Community Project Proposal: </label>
+                    <label htmlFor="title">Title of My Community Project Proposal: </label><span class="text-danger">*</span>
                     <input placeholder="Max 50 characters" onChange={(e) => setTitle(e.target.value)} value={title} className="form-control" />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="postcode">Postcode of where the Project is to be delivered: </label>
+                    <label htmlFor="postcode">Postcode of where the Project is to be delivered: </label><span class="text-danger">*</span>
                     <input onChange={(e) => setPostcode(e.target.value)} value={postcode} className="form-control" />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="grantAmount">Requested funding amount: </label>
+                    <label htmlFor="grantAmount">Requested funding amount: </label><span class="text-danger">*</span>
                     <input onChange={(e) => setGrantAmount(e.target.value)} value={grantAmount} className="form-control" />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="description">Description of the My Community Project Proposal: </label>
+                    <label htmlFor="description">Description of the My Community Project Proposal: </label><span class="text-danger">*</span>
                     <textarea placeholder="Max 300 characters" rows="5" onChange={(e) => setDescription(e.target.value)} value={description} className="form-control" />
                 </div>
                
