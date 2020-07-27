@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Breadcrumb from 'react-bootstrap/Breadcrumb'
-import Form from 'react-bootstrap/Form'
-import Alert from 'react-bootstrap/Alert'
+import { Breadcrumb, Button, Alert } from 'react-bootstrap'
+import { Switch, Route, Link, useRouteMatch } from 'react-router-dom'
+import Homepage from './Homepage'
 
 
 
@@ -17,6 +17,13 @@ export default function Submit(props) {
     const [showSuccessMessage, setShowSuccessMessage] = useState(false)
     const [showForm, setShowForm] = useState(true)
     const [showSuccess, setShowSuccess] = useState(false)
+
+    function handlePostcodeChangeEvent(e) {
+        const re = /^[0-9\b]+$/;
+        if (e.target.value === '' || re.test(e.target.value) && e.target.value.length <= 4) {
+            setPostcode(e.target.value)
+        }
+    }
 
     function sendProjectProposal(e) {
         e.preventDefault();
@@ -63,7 +70,6 @@ export default function Submit(props) {
             {showFailAlert && <Alert variant='danger' onClose={() => setShowFailAlert(false)} dismissible><Alert.Heading>Error</Alert.Heading>{errorMessage}</Alert>}
             {showSuccessMessage && <Alert variant='success' onClose={() => setShowSuccessMessage(false)} dismissible><Alert.Heading>Success</Alert.Heading>Your project application has been submitted and is pending approval</Alert>}
             <div style={{ display: showForm ? 'block' : 'none' }}>
-
                 <br />
                 <span className="text-danger"> * </span><span>indicates a required field</span> <br />
                 <br />
@@ -79,7 +85,7 @@ export default function Submit(props) {
                     </div>
                     <div className="form-group">
                         <label htmlFor="postcode">Postcode of where the Project is to be delivered: </label><span className="text-danger"> *</span>
-                        <input onChange={(e) => setPostcode(e.target.value)} value={postcode} className="form-control" />
+                        <input onChange={handlePostcodeChangeEvent} value={postcode} className="form-control" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="grantAmount">Requested funding amount: </label><span className="text-danger"> *</span>
@@ -96,14 +102,17 @@ export default function Submit(props) {
             </div>
 
             <div style={{ display: showSuccess ? 'block' : 'none' }}>
-                    <h4>Your application:</h4>
+                <h4>Your application:</h4>
                 <div className='border border-primary rounded-lg float-none p-3 mt-3'>
                     <p><b>Contanct Name: </b> {name}</p>
                     <p><b>Project Name: </b>{title}</p>
                     <p><b>Postcode: </b>{postcode}</p>
                     <p><b>Grant amount:</b> $ {grantAmount}</p>
                     <p><b>Description: </b>{description}</p>
+
                 </div>
+                <br />
+                <Link to='/Homepage'><Button className='!important btn btn-danger btn-lg' to='/Home'>Home</Button></Link>
             </div>
 
         </div>

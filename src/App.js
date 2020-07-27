@@ -36,7 +36,7 @@ function App() {
           <Route path="/project/submission">
             <Submissionsform />
           </Route>
-          <Route path="/project">
+          <Route path="/Homepage">
             <Homepage />
           </Route>
           <Route path="/pending">
