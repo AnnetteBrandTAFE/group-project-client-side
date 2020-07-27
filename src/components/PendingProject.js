@@ -12,7 +12,7 @@ export default function PendingProject(props) {
             .then((response) => response.json())
             .then((json) => {
                 if (json.status === 200) {
-                    alert("Project APPORVED!")
+                    alert("Project has been APPORVED!")
                 }
                 else {
                     alert("status is wrong");
@@ -20,16 +20,34 @@ export default function PendingProject(props) {
             });
 
     }
-
+    function DeclineProjectFunction() {
+        fetch('http://localhost:4000/projects/decline', {
+            method: "PUT",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(props.p),
+        })
+            .then((response) => response.json())
+            .then((json) => {
+                if (json.status === 200) {
+                    alert("Project DECLINED!")
+                }
+                else {
+                    alert("status is wrong");
+                };
+            });
+    }
     return (
-        <div className="border float-none m-1">
+        <div className="border border-primary rounded-lg float-none p-3 mt-3">
             <p>Project Title: {props.p.title}</p>
             <p>Submitters name: {props.p.name}</p>
             <p>Time of Submission: {props.p.timeStamp}</p>
             <p>Postcode: {props.p.postcode}</p>
             <p>Requested Funding Amount: $ {props.p.grantAmount}</p>
             <p>Description: {props.p.description}</p>
-            <Button onClick={ApproveProjectFunction}>approve</Button>
+            <div class="d-flex justify-content-start">
+                <Button className="btn btn-primary mr-3"onClick={ApproveProjectFunction}>Approve</Button>
+                <Button className="btn btn-danger"onClick={DeclineProjectFunction}>Decline</Button>
+            </div>
         </div>
     )
 
