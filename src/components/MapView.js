@@ -22,12 +22,13 @@ export default function MapView(props) {
 
 
     return (
-        <div className="border float-none m-1">
-            <h4>{props.p.title}</h4>
+      
+        <div className="border border-primary rounded-lg float-none p-3 mt-3">
+            <p><b>Title: </b>{props.p.title}</p>
             <p><b>Postcode: </b>{props.p.postcode}</p>
             <p><b>Description: </b>{props.p.description}</p>
             <p><b>Votes: </b>{props.p.voteCount}</p>
-            <Button onClick={sendVote}>Vote</Button>
+            <Button className="!important btn btn-danger btn-lg" onClick={sendVote}>Vote Now</Button>
             <br />
             <br />
             {showSuccessfulVote && <Alert variant='success' onClose={() => setShowSuccessfulVote(false)} dismissible><Alert.Heading>Success!</Alert.Heading>You have successfully voted {props.p.title}</Alert>}
