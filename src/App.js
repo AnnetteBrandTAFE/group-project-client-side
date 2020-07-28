@@ -7,6 +7,7 @@ import Submissionsform from './components/Submissions-form.js';
 import Homepage from './components/Homepage.js';
 import Pending from './components/Pending';
 import Logo from './SNSW-logos.png'
+import View from './components/View'
 
 function App() {
 
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path="/pending">
             <Pending />
+          </Route>
+          <Route path="/view">
+            <View />
           </Route>
           <Route path="/">
             <Homepage />
