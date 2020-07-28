@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { Breadcrumb, Button, Alert } from 'react-bootstrap'
-import { Switch, Route, Link, useRouteMatch } from 'react-router-dom'
-import Homepage from './Homepage'
-
-
-
+import { Link } from 'react-router-dom'
 
 export default function Submit(props) {
     const [name, setName] = useState('');
@@ -48,8 +44,6 @@ export default function Submit(props) {
                     setShowSuccessMessage(true)
                     setShowSuccess(true)
 
-
-
                 } else {
                     setShowSuccessMessage(false)
                     setShowFailAlert(true)
@@ -58,14 +52,13 @@ export default function Submit(props) {
                 // alert(json.status)
             })
     }
-    return (
 
+    return (
         <div>
             <Breadcrumb>
-            <Breadcrumb.Item className="breadcrumb-item text-body" > <Link to="/">Home</Link> </ Breadcrumb.Item>
+                <Breadcrumb.Item className="breadcrumb-item text-body" > <Link to="/">Home</Link> </ Breadcrumb.Item>
                 <Breadcrumb.Item active className="breadcrumb-item text-body font-weight-bolder"> Submit a My Community Project Proposal </ Breadcrumb.Item>
             </ Breadcrumb>
-
             <h1>Submit a My Community Project Proposal</h1>
             {showFailAlert && <Alert variant='danger' onClose={() => setShowFailAlert(false)} dismissible><Alert.Heading>Error</Alert.Heading>{errorMessage}</Alert>}
             {showSuccessMessage && <Alert variant='success' onClose={() => setShowSuccessMessage(false)} dismissible><Alert.Heading>Success</Alert.Heading>Your project application has been submitted and is pending approval</Alert>}
@@ -73,7 +66,6 @@ export default function Submit(props) {
                 <br />
                 <span className="text-danger"> * </span><span>indicates a required field</span> <br />
                 <br />
-
                 <form >
                     <div className="form-group">
                         <label htmlFor="name">Contact Name: </label><span className="text-danger"> *</span>
@@ -89,18 +81,15 @@ export default function Submit(props) {
                     </div>
                     <div className="form-group">
                         <label htmlFor="grantAmount">Requested funding amount: </label><span className="text-danger"> *</span>
-                        <input id='grantAmount'onChange={(e) => setGrantAmount(e.target.value)} value={grantAmount} className="form-control" />
+                        <input id='grantAmount' onChange={(e) => setGrantAmount(e.target.value)} value={grantAmount} className="form-control" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="description">Description of the My Community Project Proposal: </label><span className="text-danger">*</span>
                         <textarea id='description' placeholder="Max 300 characters" rows="5" onChange={(e) => setDescription(e.target.value)} value={description} className="form-control" />
                     </div>
-
                     <button className='!important btn btn-danger btn-lg' onClick={sendProjectProposal}>Submit</button>
-
                 </form >
             </div>
-
             <div style={{ display: showSuccess ? 'block' : 'none' }}>
                 <h4>Your application:</h4>
                 <div className='border border-primary rounded-lg float-none p-3 mt-3'>
@@ -109,12 +98,10 @@ export default function Submit(props) {
                     <p><b>Postcode: </b>{postcode}</p>
                     <p><b>Grant amount:</b> $ {grantAmount}</p>
                     <p><b>Description: </b>{description}</p>
-
                 </div>
                 <br />
                 <Link to='/Homepage'><Button className='!important btn btn-danger btn-lg' to='/Home'>Home</Button></Link>
             </div>
-
         </div>
     )
 }

@@ -11,7 +11,7 @@ export default function homepage(props) {
             </ Breadcrumb>
             <h1>My Community Project 2020</h1> <br />
             <Container>
-                <img src={Homepage} width="1075px" height="auto" alt="Drawing of a community"></img>
+                <img src={Homepage} width="100%" height="auto" alt="Drawing of a community"></img>
             </Container>
             <br />
             <p>My Community Project is a new initiative by the NSW Government to improve the wellbeing of people and communities in NSW. <br />
