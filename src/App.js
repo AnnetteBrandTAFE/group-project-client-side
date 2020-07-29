@@ -8,6 +8,7 @@ import Homepage from './components/Homepage.js';
 import Pending from './components/Pending';
 import Logo from './SNSW-logos.png'
 import View from './components/View'
+import TopProjects from './components/TopProjects'
 
 function App() {
 
@@ -42,6 +43,9 @@ function App() {
           </Route>
           <Route path="/view">
             <View />
+          </Route>
+          <Route path="/topprojects">
+            <TopProjects />
           </Route>
           <Route path="/">
             <Homepage />
