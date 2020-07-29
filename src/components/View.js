@@ -31,10 +31,10 @@ export default function View() {
                     aria-label="Enter Search here..."
                 />
                 <InputGroup.Append>
-                    <Button variant='!important btn btn-danger'onClick={Search}>Search</Button>
+                    <Button variant='!important btn btn-danger'>Search</Button>
                 </InputGroup.Append>
             </InputGroup>
-            
+            {/* onClick={Search} */}
             {projects.map(p => <MapView p={p} key={p.id} />)}
         </div>
 
