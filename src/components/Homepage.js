@@ -11,7 +11,7 @@ export default function homepage(props) {
             </ Breadcrumb>
             <h1>My Community Project 2020</h1> <br />
             <Container>
-                <img src={Homepage} width="1075px" height="auto" alt="Drawing of a community"></img>
+                <img src={Homepage} width="100%" height="auto" alt="Drawing of a community"></img>
             </Container>
             <br />
             <p>My Community Project is a new initiative by the NSW Government to improve the wellbeing of people and communities in NSW. <br />
@@ -47,7 +47,7 @@ export default function homepage(props) {
                         <br />
                         <br />
                         <br />
-                        <Link to='/project/submission'><Button className='!important btn btn-danger btn-lg' to='/project/submission'>Browse Projects</Button></Link>
+                        <Link to='/projects/approved'><Button className='!important btn btn-danger btn-lg' to='/projects/approved'>Browse Projects</Button></Link>
                     </Card.Body>
                 </Card>
                 <Card>
@@ -58,7 +58,7 @@ export default function homepage(props) {
                     </Card.Text>
                         <br />
                         <br />
-                        <Link to='/project/submission'><Button className='!important btn btn-danger btn-lg' to='/project/submission'>Vote Now</Button></Link>
+                        <Link to='/projects/approved'><Button className='!important btn btn-danger btn-lg' to='/projects/approved'>Vote Now</Button></Link>
                     </Card.Body>
                 </Card>
             </CardDeck>

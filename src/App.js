@@ -24,7 +24,7 @@ function App() {
               <a className="nav-link text-body font-weight-bold" href="/project/submission">Submit a Project Proposal</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-body font-weight-bold" href="https://mybusiness.service.nsw.gov.au/">Vote Now</a>
+              <a className="nav-link text-body font-weight-bold" href="/projects/approved">Vote Now</a>
             </li>
             <li className="nav-item ">
               <a className="nav-link text-body font-weight-bold" href="/pending">Admin</a>
@@ -41,7 +41,7 @@ function App() {
           <Route path="/pending">
             <Pending />
           </Route>
-          <Route path="/view">
+          <Route path="/projects/approved">
             <View />
           </Route>
           <Route path="/topprojects">
