@@ -9,7 +9,7 @@ export default function Pending() {
         fetch("http://localhost:4000/projects/pending")
             .then((response) => response.json())
             .then((json) => setPendingProjects(json));
-    }, [pendingProjects]);
+     }, [pendingProjects]);
     return (
         <div>
             <Breadcrumb>
@@ -20,6 +20,7 @@ export default function Pending() {
             <br />
             <h2>There are currently {pendingProjects.length} pending projects</h2>
             {pendingProjects.map(p => <PendingProject key={p.id} p={p} />)}
+            <br />
         </div>
     )
 }

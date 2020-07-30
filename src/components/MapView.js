@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 
 export default function MapView(props) {
-    const [showMoreDetails, setShowMoreDetails] = useState(false)
+ //   const [showMoreDetails, setShowMoreDetails] = useState(false)
     const [showSuccessfulVote, setShowSuccessfulVote] = useState(false)
     const [hideButton, setHideButton] = useState(false)
 
@@ -14,7 +14,7 @@ export default function MapView(props) {
         })
             .then((response) => response.json())
             .then(json => {
-                if (json.status == 200) {
+                if (json.status === 200) {
                     setHideButton(true)
                     setShowSuccessfulVote(true)
                 }

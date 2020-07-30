@@ -42,7 +42,7 @@ export default function PendingProject(props) {
             <p><b>Postcode: </b>{props.p.postcode}</p>
             <p><b>Requested Funding Amount: </b>$ {props.p.grantAmount}</p>
             <p><b>Description: </b>{props.p.description}</p>
-            <div class="d-flex justify-content-start">
+            <div className="d-flex justify-content-start">
                 <Button className="btn btn-primary mr-3" onClick={ApproveProject}>Approve</Button>
                 <Button className="btn btn-danger" onClick={DeclineProject}>Decline</Button>
             </div>

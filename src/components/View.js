@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import  Breadcrumb from 'react-bootstrap/Breadcrumb';
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { Link } from 'react-router-dom'
 import MapView from "./MapView";
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
@@ -16,11 +16,11 @@ export default function View() {
     return (
         <div>
             <Breadcrumb>
-                <Breadcrumb.Item className="breadcrumb-item text-body" > <Link to="/">Home</Link> </ Breadcrumb.Item>
+                <Breadcrumb.Item className="breadcrumb-item text-body"><Link to="/">Home</Link> </ Breadcrumb.Item>
                 <Breadcrumb.Item active className="breadcrumb-item text-body font-weight-bolder"> My Community Project Proposal </ Breadcrumb.Item>
             </ Breadcrumb>
             <h1><strong>My Community Project Proposals</strong></h1>
-            <Link to='/topprojects'><Button className='!important btn btn-danger btn-lg center float-right mb-3' to='/topprojects'>Click here to view the top 10 proposals</Button></Link>
+            <Link to='/topprojects'><Button className='!important btn btn-danger btn-lg center float-right mb-3' to='/topprojects'>Click here to view the <b>Top 10</b> Proposals</Button></Link>
             <br />
             <InputGroup size="lg">
                 <FormControl
@@ -32,6 +32,7 @@ export default function View() {
                 </InputGroup.Append>
             </InputGroup>
             {projects.map(p => <MapView p={p} key={p.id} />)}
+            <br />
         </div>
     )
 }

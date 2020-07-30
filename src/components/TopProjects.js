@@ -11,7 +11,7 @@ export default function TopProjects() {
             .then(json => setTopProjects(json))
     })
     let result = 0
-    function rank() {
+    function rank()  {
         return ++result
     }
     return (
@@ -22,6 +22,7 @@ export default function TopProjects() {
             </ Breadcrumb>
             <h1><strong>Top 10 My Community Project Proposals</strong></h1><br />
             {topProjects.map((p, index) => <MapTopProjects rank={++index} key={p.id} p={p} />)}
+            <br />
         </div>
     )
 }
