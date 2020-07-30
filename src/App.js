@@ -21,19 +21,20 @@ function App() {
               <a className="nav-link text-body font-weight-bold" href="/">Home</a>
             </li>
             <li className="nav-item ">
-              <a className="nav-link text-body font-weight-bold" href="/project/submission">Submit a Project Proposal</a>
+              <a className="nav-link text-body font-weight-bold" href="/project/submission">Submit Proposal</a>
             </li>
             <li className="nav-item">
               <a className="nav-link text-body font-weight-bold" href="/projects/approved">Vote Now</a>
+            </li>
+            <li className="nav-item ">
+              <a className="nav-link text-body font-weight-bold" href="/topprojects">Top 10</a>
             </li>
             <li className="nav-item ">
               <a className="nav-link text-body font-weight-bold" href="/pending">Admin</a>
             </li>
           </ul>
         </nav>
-
       <Router>
-
         <Switch>
           <Route path="/project/submission">
             <Submissionsform />
@@ -55,5 +56,4 @@ function App() {
     </Container >
   );
 }
-
 export default App;

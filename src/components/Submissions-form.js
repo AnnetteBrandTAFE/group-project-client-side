@@ -20,7 +20,6 @@ export default function Submit(props) {
             setPostcode(e.target.value)
         }
     }
-
     function sendProjectProposal(e) {
         e.preventDefault();
         let p = {
@@ -30,7 +29,6 @@ export default function Submit(props) {
             grantAmount,
             description
         };
-
         fetch('http://localhost:4000/projects/submissions', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
@@ -52,7 +50,6 @@ export default function Submit(props) {
                 // alert(json.status)
             })
     }
-
     return (
         <div>
             <Breadcrumb>

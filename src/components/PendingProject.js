@@ -2,8 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 
 export default function PendingProject(props) {
-
-    function ApproveProjectFunction() {
+    function ApproveProject() {
         fetch('http://localhost:4000/projects/approve', {
             method: "PUT",
             headers: { 'Content-Type': 'application/json' },
@@ -19,7 +18,7 @@ export default function PendingProject(props) {
                 };
             });
     }
-    function DeclineProjectFunction() {
+    function DeclineProject() {
         fetch('http://localhost:4000/projects/decline', {
             method: "PUT",
             headers: { 'Content-Type': 'application/json' },
@@ -44,8 +43,8 @@ export default function PendingProject(props) {
             <p><b>Requested Funding Amount: </b>$ {props.p.grantAmount}</p>
             <p><b>Description: </b>{props.p.description}</p>
             <div class="d-flex justify-content-start">
-                <Button className="btn btn-primary mr-3" onClick={ApproveProjectFunction}>Approve</Button>
-                <Button className="btn btn-danger" onClick={DeclineProjectFunction}>Decline</Button>
+                <Button className="btn btn-primary mr-3" onClick={ApproveProject}>Approve</Button>
+                <Button className="btn btn-danger" onClick={DeclineProject}>Decline</Button>
             </div>
         </div>
     )

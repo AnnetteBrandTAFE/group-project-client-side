@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import  Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { Link } from 'react-router-dom'
-
 import MapView from "./MapView";
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
 
@@ -14,15 +13,12 @@ export default function View() {
                 setProjects(json.data)
             });
     }, [projects]);
-
     return (
         <div>
             <Breadcrumb>
                 <Breadcrumb.Item className="breadcrumb-item text-body" > <Link to="/">Home</Link> </ Breadcrumb.Item>
                 <Breadcrumb.Item active className="breadcrumb-item text-body font-weight-bolder"> My Community Project Proposal </ Breadcrumb.Item>
             </ Breadcrumb>
-
-
             <h1><strong>My Community Project Proposals</strong></h1>
             <br />
             <InputGroup size="lg">
@@ -37,7 +33,6 @@ export default function View() {
             {/* onClick={Search} */}
             {projects.map(p => <MapView p={p} key={p.id} />)}
         </div>
-
     )
 }
 
