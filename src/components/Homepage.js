@@ -25,7 +25,6 @@ export default function homepage(props) {
                 <br />
             The My Community Project funding will be distributed equally across all 93 NSW electorates. Applicants can seek between $20,000 and
             $200,000 (including GST, where applicable) for their project.</p>
-
             <CardDeck >
                 <Card >
                     <Card.Body >
@@ -62,6 +61,7 @@ export default function homepage(props) {
                     </Card.Body>
                 </Card>
             </CardDeck>
+            <br />
         </div>
     )
 } 
