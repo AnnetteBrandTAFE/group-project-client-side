@@ -47,7 +47,6 @@ export default function Submit(props) {
                     setShowFailAlert(true)
                     setErrorMessage(json.message)
                 }
-                // alert(json.status)
             })
     }
     return (

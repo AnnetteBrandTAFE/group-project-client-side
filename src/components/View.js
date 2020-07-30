@@ -20,6 +20,7 @@ export default function View() {
                 <Breadcrumb.Item active className="breadcrumb-item text-body font-weight-bolder"> My Community Project Proposal </ Breadcrumb.Item>
             </ Breadcrumb>
             <h1><strong>My Community Project Proposals</strong></h1>
+            <Link to='/topprojects'><Button className='!important btn btn-danger btn-lg center float-right mb-3' to='/topprojects'>Click here to view the top 10 proposals</Button></Link>
             <br />
             <InputGroup size="lg">
                 <FormControl
@@ -30,7 +31,6 @@ export default function View() {
                     <Button variant='!important btn btn-danger'>Search</Button>
                 </InputGroup.Append>
             </InputGroup>
-            {/* onClick={Search} */}
             {projects.map(p => <MapView p={p} key={p.id} />)}
         </div>
     )
